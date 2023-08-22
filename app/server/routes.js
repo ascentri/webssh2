@@ -11,6 +11,7 @@ const config = require('./config');
 
 exports.reauth = function reauth(req, res) {
   let { referer } = req.headers;
+  if (referer === undefined) referer = '/';
   if (!validator.isURL(referer, { host_whitelist: ['localhost','bi.coinoponline.com.au'] })) {
     console.error(
       `WebSSH2 (${req.sessionID}) ERROR: Referrer '${referer}' for '/reauth' invalid. Setting to '/' which will probably fail.`

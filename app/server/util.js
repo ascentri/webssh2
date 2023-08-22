@@ -34,8 +34,8 @@ exports.basicAuth = function basicAuth(req, res, next) {
   if (!req.session.userpassword && !req.session.privatekey) {
     res.statusCode = 401;
     debug('basicAuth credential request (401)');
-    res.setHeader('WWW-Authenticate', 'Basic realm="WebSSH"');
-    res.end('Username and password required for web SSH service.');
+    res.setHeader('WWW-Authenticate', 'Basic realm="coinoponline.com.au"');
+    res.end('Username and password required.');
     return;
   }
   next();
