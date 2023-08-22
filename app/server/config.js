@@ -2,16 +2,11 @@
    no-console: ["error", { allow: ["warn", "error", "info"] }] */
 const fs = require('fs');
 const path = require('path');
-const merger = require('json-merger');
 const debugWebSSH2 = require('debug')('WebSSH2');
 const crypto = require('crypto');
 const util = require('util');
 const readconfig = require('read-config-ng');
 
-const nodeRoot = path.dirname(require.main.filename);
-const configPath = path.join(nodeRoot, 'config.json');
-
-let myConfig;
 // establish defaults
 const configDefault = {
   listen: {
@@ -100,27 +95,7 @@ const configDefault = {
   safeShutdownDuration: 300,
 };
 
-// test if config.json exists, if not provide error message but try to run anyway
-try {
-  if (!fs.existsSync(configPath)) {
-    console.error(
-      `\n\nERROR: Missing config.json for WebSSH2. Current config: ${util.inspect(myConfig)}`
-    );
-    console.error('\n  See config.json.sample for details\n\n');
-  }
-  console.info(`WebSSH2 service reading config from: ${configPath}`);
-  const configFile = readconfig(configPath, { override: true });
-  myConfig = merger.mergeObjects([configDefault, configFile]);
-  debugWebSSH2(`\nCurrent config: ${util.inspect(myConfig)}`);
-} catch (err) {
-  myConfig = configDefault;
-  console.error(
-    `\n\nERROR: Missing config.json for WebSSH2. Current config: ${util.inspect(myConfig)}`
-  );
-  console.error('\n  See config.json.sample for details\n\n');
-  console.error(`ERROR:\n\n  ${err}`);
-}
-const config = myConfig;
+const config = configDefault;
 
 if (process.env.LISTEN) config.listen.ip = process.env.LISTEN;
 
