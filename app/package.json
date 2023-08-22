@@ -26,23 +26,24 @@
     }
   ],
   "engines": {
-    "node": ">= 14"
+    "node": ">= 18"
   },
   "bugs": {
     "url": "https://github.com/billchurch/WebSSH2/issues"
   },
   "dependencies": {
-    "basic-auth": "~2.0.1",
-    "cidr-matcher": "^2.1.1",
-    "debug": "^4.3.4",
-    "express": "^4.18.1",
-    "express-session": "^1.17.3",
-    "morgan": "~1.10.0",
-    "read-config-ng": "^3.0.5",
-    "serve-favicon": "^2.5.0",
-    "socket.io": "^4.5.1",
-    "ssh2": "^1.11.0",
-    "validator": "^13.7.0"
+    "basic-auth": "",
+    "cidr-matcher": "",
+    "debug": "",
+    "express": "",
+    "express-session": "",
+    "morgan": "",
+    "pm2": "",
+    "read-config-ng": "",
+    "serve-favicon": "",
+    "socket.io": "",
+    "ssh2": "",
+    "validator": ""
   },
   "scripts": {
     "start": "node index.js",
@@ -55,33 +56,36 @@
     "release": "standard-version"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.2",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "@typescript-eslint/eslint-plugin": "^5.32.0",
-    "@typescript-eslint/parser": "^5.32.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.1",
-    "eslint": "^8.21.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "mini-css-extract-plugin": "^2.6.1",
-    "nodaemon": "0.0.5",
-    "prettier": "^2.7.1",
-    "snazzy": "^9.0.0",
-    "snyk": "^1.982.0",
-    "socket.io-client": "^4.5.1",
-    "source-map-loader": "^4.0.0",
-    "standard-version": "^9.5.0",
-    "terser-webpack-plugin": "^5.3.3",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-merge": "^5.8.0",
-    "xterm": "^4.19.0",
-    "xterm-addon-fit": "^0.5.0"
+    "@fortawesome/fontawesome-svg-core": "",
+    "@fortawesome/free-solid-svg-icons": "",
+    "@typescript-eslint/eslint-plugin": "",
+    "@typescript-eslint/parser": "",
+    "clean-webpack-plugin": "",
+    "copy-webpack-plugin": "",
+    "css-loader": "",
+    "eslint": "",
+    "eslint-config-airbnb-base": "",
+    "eslint-config-prettier": "",
+    "eslint-plugin-import": "",
+    "eslint-plugin-prettier": "",
+    "mini-css-extract-plugin": "",
+    "nodaemon": "",
+    "prettier": "",
+    "snazzy": "",
+    "snyk": "",
+    "socket.io-client": "",
+    "source-map-loader": "",
+    "standard-version": "",
+    "terser-webpack-plugin": "",
+    "ts-loader": "",
+    "typescript": "",
+    "webpack": "",
+    "webpack-cli": "",
+    "webpack-merge": "",
+    "xterm": "",
+    "xterm-addon-fit": ""
+  },
+  "overrides": {
+    "semver": "~7.5.2"
   }
 }
