@@ -21,7 +21,7 @@ const configDefault = {
   socketio: {
     serveClient: false,
     path: '/ssh/socket.io',
-    origins: ['localhost:2222'],
+    origins: ['localhost:2222','bi.coinoponline.com.au'],
   },
   express: {
     secret: crypto.randomBytes(20).toString('hex'),

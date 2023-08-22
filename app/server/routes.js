@@ -11,7 +11,7 @@ const config = require('./config');
 
 exports.reauth = function reauth(req, res) {
   let { referer } = req.headers;
-  if (!validator.isURL(referer, { host_whitelist: ['localhost'] })) {
+  if (!validator.isURL(referer, { host_whitelist: ['localhost','bi.coinoponline.com.au'] })) {
     console.error(
       `WebSSH2 (${req.sessionID}) ERROR: Referrer '${referer}' for '/reauth' invalid. Setting to '/' which will probably fail.`
     );
@@ -43,7 +43,7 @@ exports.connect = function connect(req, res) {
 
   // capture, assign, and validate variables
 
-  if (req.params?.host) {
+  if (req.params.host) {
     if (
       validator.isIP(`${req.params.host}`) ||
       validator.isFQDN(req.params.host) ||
@@ -53,12 +53,12 @@ exports.connect = function connect(req, res) {
     }
   }
 
+  if (req.params.port && validator.isInt(`${req.params.port}`, { min: 1, max: 65535 }))
+    port = req.params.port;
+
   if (req.method === 'POST' && req.body.username && req.body.userpassword) {
     req.session.username = req.body.username;
     req.session.userpassword = req.body.userpassword;
-
-    if (req.body.port && validator.isInt(`${req.body.port}`, { min: 1, max: 65535 }))
-      port = req.body.port;
 
     if (req.body.header) header = req.body.header;
 

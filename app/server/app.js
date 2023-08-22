@@ -42,12 +42,12 @@ if (config.accesslog) app.use(logger('common'));
 app.disable('x-powered-by');
 app.use(favicon(path.join(publicPath, 'favicon.ico')));
 app.use(express.urlencoded({ extended: true }));
-app.post('/ssh/host/:host?', connect);
+app.post('/ssh/host/:host/:port(\\d+)', connect);
 app.post('/ssh', express.static(publicPath, config.express.ssh));
 app.use('/ssh', express.static(publicPath, config.express.ssh));
 app.use(basicAuth);
 app.get('/ssh/reauth', reauth);
-app.get('/ssh/host/:host?', connect);
+app.get('/ssh/host/:host/:port(\\d+)', connect);
 app.use(notfound);
 app.use(handleErrors);
 
