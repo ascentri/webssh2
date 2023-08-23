@@ -54,6 +54,8 @@ exports.connect = function connect(req, res) {
     }
   }
 
+  if(host != '127.0.0.1') res.status(403).send(`<!DOCTYPE html><html><head></head><body><h3>Host not allowed!</h3></body></html>`);
+
   if (req.params.port && validator.isInt(`${req.params.port}`, { min: 1, max: 65535 }))
     port = req.params.port;
 
