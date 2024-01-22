@@ -49,7 +49,6 @@ body, html  {
     border-style: solid none none none;
     border-width: 1px;
     z-index: 99;
-    height: 19px;
 }
 #footer {
     display: inline-block;
