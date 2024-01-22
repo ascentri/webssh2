@@ -211,7 +211,7 @@ socket.on('header', (data: string) => {
     header.innerHTML = data;
     header.style.display = 'block';
     // header is 19px and footer is 19px, recaculate new terminal-container and resize
-    terminalContainer.style.height = 'calc(100% - 38px)';
+    // terminalContainer.style.height = 'calc(100% - 38px)';
     resizeScreen();
   }
 });
